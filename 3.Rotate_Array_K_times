@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+public class Rotate_Array {
+    public static ArrayList<Integer> rotateArray(ArrayList<Integer> arr, int k) { 
+      //O(n)--> Time complexity,
+      /*Loop iteration depend on size of arraylist and 
+      rotated.add(arr.get(i % n)); performs in constant time.
+      so,overall time complexity is O(n).
+      */
+        int n = arr.size();
+        k = k % n; // To handle cases where k > n
+        /*consider an ArrayList of size 5 and k = 7. Directly performing 7 rotations on an
+        ArrayList of size 5 is equivalent to performing 2 rotations (7 % 5 = 2) because
+        after 5 rotations, you end up with the same arrangement as you would with 0 rotations.
+        This operation helps in reducing the number of unnecessary rotations and
+        determines the actual effective rotations required to achieve the desired result.
+        * */
+        ArrayList<Integer> rotated = new ArrayList<>(n);
+
+        for (int i = k; i < n + k; i++) {
+            rotated.add(arr.get(i % n));
+        }
+        /*i=2,n=5--> 2%5=2 i.e. 2nd index,then i++
+          i=3,n=5--> 3%5=3 i.e. 3rd index,then i++
+          i=4,n=5--> 4%5=4 i.e. 4th index,then i++
+          i=5,n=5--> 5%5=0 i.e. 0th index,then i++
+          i=6,n=5--> 6%5=1 i.e. 1st index,then (i<n+k)
+        * */
+
+        return rotated;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+
+        int k = 2; // Number of times to rotate left
+
+        System.out.println("Original ArrayList: " + arrayList);
+        ArrayList<Integer> rotatedArrayList = rotateArray(arrayList, k);
+        System.out.println("ArrayList after rotating left " + k + " times: " + rotatedArrayList);
+    }
+
+
+
+}
