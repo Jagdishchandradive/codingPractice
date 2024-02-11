@@ -20,7 +20,22 @@ public class Find_Duplicates_in_Array {
         boolean hasDuplicates = containsDuplicate(numbers);
         System.out.println("Array contains duplicates: " + hasDuplicates);
     }
+----------------------------------------------------------------------------------
+OR for the same Time Complexity use this,
+class Solution {
+    public boolean containsDuplicate(int[] nums) 
+    { HashSet<Integer> bucket = new HashSet<>();
+        for(int i=0;i<nums.length;i++){
+            if(!bucket.add(nums[i])){
+                return true;
+            }
+        
+        }
+        return false;
+    }
+    }
 
+----------------------------------------------------------------------------------
    /*
    O(n^2)--> Time complexity
    public boolean containsDuplicate(int[] nums){
