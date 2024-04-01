@@ -1,0 +1,17 @@
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+//         print 1 2 3 4 5 6 7 8 9 10
+ //*******using for loop***********
+        // for(int i=1;i<11;i++){
+        //     System.out.print(i+" ");
+//  ---------------------------------------------
+//   ********using while loop**********
+        int counter=1;
+        while(counter<11){
+            System.out.print(counter+" ");
+            counter++;
+        }
+
+    }
+}

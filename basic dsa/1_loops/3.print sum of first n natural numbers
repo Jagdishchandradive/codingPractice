@@ -1,0 +1,21 @@
+// "static void main" must be defined in a public class.
+
+public class Main {
+    public static void main(String[] args) {
+       //print sum of first n natural no.
+        Scanner sc=new Scanner(System.in);
+        int n= sc.nextInt();
+        int sum=0;
+        int i=1;
+        //********forLoop*******
+        for(i=1;i<=n;i++){
+            sum=i+sum;
+         }
+        //***********while loop*********
+        // while(i<=n){
+        //     sum=i+sum;
+        //     i++;
+        // }
+        System.out.print(sum);
+    }
+}
