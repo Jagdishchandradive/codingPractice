@@ -1,0 +1,18 @@
+// "static void main" must be defined in a public class.
+
+public class Main {
+    public static void main(String[] args) {
+      //print square pattern
+/*   ****
+     ****
+     ****
+     ****
+*/
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
