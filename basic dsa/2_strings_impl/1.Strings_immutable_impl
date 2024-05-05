@@ -1,0 +1,16 @@
+//New object is created everytime at string object manupulation.
+//because Original string object is immutable.
+public class Main {
+    public static void main(String[] args) {
+        String firstString="Hello";
+        String concatedString=firstString+"world";
+
+        System.out.println("Original String = "+ firstString);
+        System.out.println("Conacated String= "+concatedString );
+        if(firstString==concatedString){
+            System.out.println("No new object is created");
+        }else{
+            System.out.println("New object is created at String Concatination");
+        }
+    }
+}

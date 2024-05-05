@@ -1,0 +1,22 @@
+ /* When string literals are craeted ,java first checks the String pool.
+ if String is already exist in the pool,ref to that existing instance is returned.
+        */
+public class Main {
+    public static void main(String[] args) {
+        String str1="Hello"; //String Literals
+        String str2="Hello";
+        String str3= new String("Hello");
+        String str4= new String("hello");
+            // Creating strings with Literals promotes reusing existing objects
+            // from the string pool,whereas the `new` keyword forces a new object creation
+                              //'=='are for reference comparison,return Boolean
+        System.out.println(str1==str2); //true
+                              //str1 and str2 both ref to same string literal.
+        System.out.println(str1==str3); //false
+                              //str3 is explicitely created using new keyword.
+                              //'equals()'for content comparison, return Boolean
+        System.out.println(str1.equals(str2));//true
+        System.out.println(str1.equals(str3));//true
+        System.out.println(str1.equalsIgnoreCase(str4));//true
+       }
+}
