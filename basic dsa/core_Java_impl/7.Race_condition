@@ -1,3 +1,13 @@
+//Mutation in threads creates instability in code,
+//So, Using threads with data which is immutable or
+// if method can do mutation make it threadSafe.
+//THREAD_SAFE - only one thread can work with method at a time.
+//if 2 threads accessing method , use  join() on both threads,
+  causing the main thread to wait until both t1 and t2 finish their execution.
+  After both threads have finished, the main thread proceeds with further actions.
+//How to make sure 1 thread works at 1 time?
+//--> use synchronized keyword to method which threads are accessing.
+
 class Counter{
     int count;
     public synchronized void increment(){
