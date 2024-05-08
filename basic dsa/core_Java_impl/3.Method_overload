@@ -1,0 +1,24 @@
+//Method overriding-
+//Method overloading allows you to define multiple methods with the same name in a class.
+//These methods mus have different parameter lists (number or types of parameters).
+//Java determines which overloaded method to call based on the number and types of
+//arguments passed during the method invocation.
+//Method overloading is resolved at compile time and is also known as static polymorphism //or compile-time polymorphism.
+class Calculator{
+   public int add(int a ,int b){
+       return a+b;
+   }
+   public int add(int a,int b,int c){
+        return a+b+c;
+    }
+    public double  add(double a, double b){
+        return a+b;
+    }
+
+    public static void main(String [] args){
+        Calculator calc=new Calculator();
+        System.out.println("Sum of 5 and 5 =  "+calc.add(5,5));
+        System.out.println("Sum of 5 , 10 and 5 =  "+calc.add(5,10,5));
+        System.out.println("Sum of 5.2 and 5.8 =  "+calc.add(5.2,5.8));
+    }
+}

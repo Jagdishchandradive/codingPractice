@@ -1,0 +1,21 @@
+//String class methods.
+
+public class Main {
+    public static void main(String[] args) {
+        String name ="Core";
+        String name2="java";
+        String fullname=name.concat(name2);
+        String WhiteSpace=" Whitespace Removed ";
+        System.out.println(name.length());
+        System.out.println(fullname);
+        System.out.println(name.charAt(2));
+        System.out.println((name.concat(name2).charAt(4)));
+        System.out.println(fullname.substring(4,8));
+        System.out.println(fullname.toUpperCase());
+        System.out.println(WhiteSpace.trim());
+        System.out.println(fullname.replace("Core","Advance"));
+        System.out.println(name2.indexOf('a'));
+        System.out.println(name2.lastIndexOf('a'));
+
+    }
+}

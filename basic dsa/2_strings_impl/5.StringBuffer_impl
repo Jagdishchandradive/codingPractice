@@ -1,0 +1,32 @@
+//Stringbuffer - default size of 16
+//StringBuffer is ThreadSafe, StringBuilder is not
+class demo{
+    public static void main(String args[]){
+        StringBuffer sb = new StringBuffer();
+        System.out.println(sb.capacity());
+    }
+} //16
+//2.
+class demo{
+    public static void main(String args[]){
+        StringBuffer sb = new StringBuffer("Java");
+        System.out.println(sb.capacity());
+    }
+}//20
+//StringBuffer methods impl
+class demo{
+    public static void main(String args[]){
+        StringBuffer sb = new StringBuffer("Java");
+        System.out.println(sb.capacity());
+        sb.append(" Core");
+        System.out.println(sb);
+        sb.insert(0,"core ");
+        System.out.println(sb);
+        sb.setLength(30);
+        System.out.println(sb.capacity());
+    }
+}
+//20
+//Java Core
+//core Java Core
+//42

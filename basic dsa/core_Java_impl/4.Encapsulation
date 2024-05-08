@@ -1,0 +1,47 @@
+/*
+  Encapsulation= Encapsulation allows us to hide the internal state
+  of an object and restrict access to it from outside the class.
+  This helps in ensuring data integrity and prevents the accidental modification
+  of data.
+ *In Java, encapsulation is implemented using access control modifiers,
+  such as public, private, protected, and default (no modifier).
+ *These access modifiers control the visibility of class members
+  (fields and methods) to other classes.
+*/
+
+class Car{
+    private String model;
+    private int year;
+
+ // Public getter and setter methods to access and modify the private variables
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        // Additional validation logic can be added here
+        this.year = year;
+    }
+/*We provide public getter and setter methods (getModel(), setModel(), getYear(), setYear())
+  to access and modify the private variables.Using these getter and setter methods,
+  external classes can interact with the Car object without directly accessing its internal state.
+*/
+    public static void main(String [] args){
+        Car mycar=new Car();
+        mycar.setModel("TATA");
+        mycar.setYear(2024);
+        System.out.println("Model: " + mycar.getModel());
+        System.out.println("Year: " + mycar.getYear());
+    }
+
+}
+//Model: TATA
+//Year: 2024

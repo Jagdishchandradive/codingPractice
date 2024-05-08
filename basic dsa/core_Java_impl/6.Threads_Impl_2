@@ -1,0 +1,97 @@
+//second way using Runnable interface.
+//3.By Runnable objects using Lambda Expressions----------------------
+     public class Demo{
+         public static void main(String args[]){
+             Runnable obj1  =()->
+              { for(int i=1;i<=10;i++)
+                     {
+                          System.out.println("hi");
+                          try{ Thread.sleep(10);}
+                          catch(InterruptedException e){e.printStackTrace();}
+                      }
+                  };
+
+             Runnable obj2 = ()->
+                  { for(int i=1;i<=10;i++)
+                     {
+                          System.out.println("hello");
+                          try{ Thread.sleep(10);}
+                          catch(InterruptedException e){e.printStackTrace();}
+                      }
+                  };
+
+
+             Thread t1=new Thread(obj1);
+             Thread t2=new Thread(obj2);
+             t1.start();
+             t2.start();
+         }
+     }
+
+//2.Instantiate Anonymous class With Runnable Without lambda expression ----------------------------------------------------------------
+  public class Demo{
+    public static void main(String args[]){
+          Runnable obj1  = new Runnable (){
+                  //Anonymous class with run(),define with runnable interface
+            public void run()
+               { for(int i=1;i<=10;i++)
+                  {
+                       System.out.println("hi");
+                       try{ Thread.sleep(10);}
+                       catch(InterruptedException e){e.printStackTrace();}
+                   }
+               }
+          };
+          Runnable obj2 = new Runnable (){
+               public void run()
+               { for(int i=1;i<=10;i++)
+                  {
+                       System.out.println("hello");
+                       try{ Thread.sleep(10);}
+                       catch(InterruptedException e){e.printStackTrace();}
+                   }
+               }
+          };
+
+          Thread t1=new Thread(obj1);
+          Thread t2=new Thread(obj2);
+          t1.start();
+          t2.start();
+      }
+  }
+
+
+
+
+//1.Without Lambda Expression----------------------------------------------------------------
+class A implements Runnable{
+    public void run()
+    { for(int i=1;i<=10;i++)
+       {
+            System.out.println("hi");
+            try{ Thread.sleep(10);}
+            catch(InterruptedException e){e.printStackTrace();}
+        }
+    }
+}
+class B implements Runnable{
+     public void run()
+    { for(int i=1;i<=10;i++)
+       {
+            System.out.println("hello");
+            try{ Thread.sleep(10);}
+            catch(InterruptedException e){e.printStackTrace();}
+        }
+    }
+}
+    public class Demo{
+        public static void main(String args[]){
+            Runnable obj1  =new A();
+            Runnable obj2 =new B();
+
+            Thread t1=new Thread(obj1);
+            Thread t2=new Thread(obj2);
+            t1.start();
+            t2.start();
+        }
+    }

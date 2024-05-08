@@ -1,0 +1,42 @@
+//one way of implementing threads(using thread class).
+//To print hi and hello simultaneously,using threads.
+/* --> No Guaranty  to get this output as desired , bcz 2 threads are fast and
+      accessing scheduler at same time. So need to set priority in between threads
+      and add delay time in threads before accessing scheduler with Thread.sleep();.
+*/
+class A extends Thread{
+    public void run()    //show() is replaced by run(),in order to work with
+                        //thread class's Runnable interface contains run() method.
+    { for(int i=1;i<=15;i++)
+       {
+            System.out.println("hi");
+            try{ Thread.sleep(10);}
+                        //Add delay time in threads before accessing the scheduler
+                        //with Thread.sleep();
+            catch(InterruptedException e){e.printStackTrace();}
+        }
+    }
+}
+class B extends Thread{
+     public void run()
+    { for(int i=1;i<=15;i++)
+       {
+            System.out.println("hello");
+            try{ Thread.sleep(10);}
+            catch(InterruptedException e){e.printStackTrace();}
+        }
+    }
+}
+    public class Demo{
+        public static void main(String args[]){
+            A obj1 =new A();
+            B obj2 =new B();
+               System.out.println(obj1.getPriority());
+                     //To get what is current priority of thread.
+                     // thread priority range goes from 1 to 10.
+               obj2.setPriority(Thread.MAX_PRIORITY());
+                     // You can suggest Scheduler to give priority to one thread.
+            obj1.start(); // show() method is replaced with start().
+            obj2.start();
+        }
+    }
